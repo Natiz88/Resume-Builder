@@ -2,7 +2,10 @@ import Basic from "./components/Basic";
 
 function App() {
   return (
-    <div className="bg-red-200">
+    <div>
+      <h1 className="text-green-400 text-lg font-semibold flex justify-center">
+        Resume Builder
+      </h1>
       <Basic />
     </div>
   );
