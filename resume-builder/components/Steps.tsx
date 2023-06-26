@@ -5,18 +5,17 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 
 const steps = [
-  'Select master blaster campaign settings',
-  'Create an ad group',
-  'Create an ad',
-  'Create an ad',
-  'Create an ad',
+  'Personal Info',
+  'Skills',
+  'Experience',
+  'Projects',
 ];
 
 export default function Steps() {
   return (
-    <div className='w-1/2'>
+    <div className='w-full'>
     <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={1} alternativeLabel>
+      <Stepper activeStep={0} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
