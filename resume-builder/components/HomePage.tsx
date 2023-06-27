@@ -2,6 +2,7 @@ import React from 'react';
 import Steps from './Steps';
 import Resume from './Resume';
 import Personal from './forms/Personal';
+import ResumePage from './resume/ResumePage';
 
 const HomePage = () => {
   return (
@@ -10,7 +11,8 @@ const HomePage = () => {
       <Steps />
       <Personal />
       </div>
-        <Resume/>
+        
+      <ResumePage/>
     </div>
   )
 }
