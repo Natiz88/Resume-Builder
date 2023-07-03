@@ -1,3 +1,4 @@
+'use client'
 import {useRef} from 'react';
 import Image from 'next/image';
 import ProfilePic from '../../images/profile.png'
@@ -72,7 +73,7 @@ const ResumePage = () => {
     ]
 
   return (
-    <div ref={printRef} className='w-full mx-8 lg:mx-0 lg:w-2/5 h-[700px] flex border border-gray-400'>
+    <div ref={printRef} className='w-full mx-8 lg:mx-0 h-[700px] flex border border-gray-400'>
         <div className='w-[35%] p-4 h-full flex flex-col items-center  bg-blue-900 text-white'>
             <Image
       src={ProfilePic}
