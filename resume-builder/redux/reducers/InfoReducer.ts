@@ -1,13 +1,53 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    personalInfo:{
-        name:"Your Name",
-        email:"email@gmail.com",
-        address:"address",
-        phone:"9803023459",
-        bio:"Something about yourself"
-    }
+    personalInfo :{
+        name:"Nabin Sharma",
+        bio:"I am a passionate Full Stack Web Developer with expertise in building dynamic and engaging web applications using MERN stack. I take a determined approach to every project, from conceptualization to deployment, accepting obstacles and coming up with creative solutions.",
+        email:"nabin@gmail.com",
+        phone:"9804320458",
+        address:"Itahari"
+    },
+    socialSites : [
+        {site_name:"github",site_icon:"GitHubIcon",site_link:"http://github/sharma"},
+        {site_name:"linkedin",site_icon:"LinkedInIcon",site_link:"http://linkedIn/sharma"},
+    ],
+    education : [
+        {
+            school:"Las ejt",
+            degree:"bachelor",
+            startData:"june 2022",
+            endDate:"june 2023",
+            city:"Daharan"
+        },
+    ],
+    experience :[
+        {
+            title:"Frontend Developer",
+            employer:"Bluefox pvt. ltd",
+            location:"Itahari",
+            start:"july 2022",
+            end:"november 2022",
+            descreption:"I worked as a frontend developer"
+        }
+    ],
+    projects :[
+        {
+            project_title:"Answerout",
+            descreption:"It was made",
+            link:"https://answerout.com"
+        },
+        {
+            project_title:"saral print",
+            descreption:"It was made",
+            link:"https://saral.com"
+        },
+    ],
+
+    skills :[
+        {name:"HTML, CSS, Javascript"},
+        {name:"React"},
+    ]
 }
 
 const InfoSlice = createSlice({
@@ -15,11 +55,12 @@ const InfoSlice = createSlice({
     initialState,
     reducers:{
         updatePersonalInfo(state,action){
+            console.log("red",action.payload)
             state.personalInfo = action.payload
         }
     }
 
 })
 
-export const loginActions = InfoSlice.actions;
-export default InfoSlice;
+export const infoActions = InfoSlice.actions;
+export default InfoSlice.reducer;

@@ -5,6 +5,7 @@ import Resume from './Resume';
 import Personal from './forms/Personal';
 import Skills from './forms/Skills'
 import ResumePage from './resume/ResumePage';
+import MyEditor from './MyEditor'
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <div className='lg:w-2/5'>
       <Steps />
       <Personal />
+      
       {/* <Skills /> */}
       </div>
       <div className='lg:w-3/6 lg:mx-4'>      

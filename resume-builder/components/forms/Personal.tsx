@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {FormEvent, useState} from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import {
@@ -10,23 +10,32 @@ import {
   IconButton,
   TextField,
 } from "@mui/material";
+import { useDispatch } from "react-redux";
+import {infoActions} from '../../redux/reducers/InfoReducer';
 
 import NextButton from "../NextButton";
 
 const Personal = () => {
-  interface info{
+  const dispatch = useDispatch();
+  interface infoP{
     name:String,
     bio:String,
     email:String,
     phone:String,
     address:String,
   }
-  const [info,setInfo] = useState<info>({
+  const [info,setInfo] = useState<infoP>({
     name:'',bio:'',email:'',phone:'',address:''})
+
+  const submitInfo = (e:FormEvent) => {
+    e.preventDefault();
+    console.log("form",info)
+    dispatch(infoActions.updatePersonalInfo(info))
+  }
 
   return <div className="w-full px-8 mt-8">
     <h3 className="text-center py-4">Enter your personal details</h3>
-    <form className=" p-2">
+    <form className=" p-2" onSubmit={submitInfo}>
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <TextField label="Full Name" fullWidth variant="outlined" onChange={(e)=>setInfo({...info,name:e.target.value})} />      </Grid>
@@ -44,6 +53,7 @@ const Personal = () => {
  <TextField label="Phone" fullWidth variant="outlined" onChange={(e)=>setInfo({...info,phone:e.target.value})} />
       </Grid>
 </Grid>
+<button type="submit">Submit</button>
 
     </form>
     <NextButton/>

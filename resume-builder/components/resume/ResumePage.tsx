@@ -10,7 +10,16 @@ import PermDeviceInformationIcon from '@mui/icons-material/PermDeviceInformation
 import { EmailOutlined } from '@mui/icons-material';
 import HomeIcon from '@mui/icons-material/Home';
 
+import {useSelector,useDispatch} from 'react-redux';
+import type { RootState } from '../../redux/store';
+
 const ResumePage = () => {
+    const personalInfo = useSelector((state:RootState) => state.info.personalInfo)
+    const socialSites = useSelector((state:RootState) => state.info.socialSites)
+    const education = useSelector((state:RootState) => state.info.education)
+    const skills = useSelector((state:RootState) => state.info.skills)
+    const experience = useSelector((state:RootState) => state.info.experience)
+    const projects = useSelector((state:RootState) => state.info.projects)
 
     const printRef = useRef<HTMLInputElement>(null);
 
@@ -23,54 +32,6 @@ const ResumePage = () => {
         document.body.innerHTML = doc;
         }
       };
-
-    let personalInfo = {
-        name:"Nabin Sharma",
-        bio:"I am a passionate Full Stack Web Developer with expertise in building dynamic and engaging web applications using MERN stack. I take a determined approach to every project, from conceptualization to deployment, accepting obstacles and coming up with creative solutions.",
-        email:"nabin@gmail.com",
-        phone:"9804320458",
-        address:"Itahari"
-    }
-    let socialSites = [
-        {site_name:"github",site_icon:"GitHubIcon",site_link:"http://github/sharma"},
-        {site_name:"linkedin",site_icon:"LinkedInIcon",site_link:"http://linkedIn/sharma"},
-    ]
-    let education = [
-        {
-            school:"Las ejt",
-            degree:"bachelor",
-            startData:"june 2022",
-            endDate:"june 2023",
-            city:"Daharan"
-        },
-    ]
-    let experience = [
-        {
-            title:"Frontend Developer",
-            employer:"Bluefox pvt. ltd",
-            location:"Itahari",
-            start:"july 2022",
-            end:"november 2022",
-            descreption:"I worked as a frontend developer"
-        }
-    ]
-    let projects = [
-        {
-            project_title:"Answerout",
-            descreption:"It was made",
-            link:"https://answerout.com"
-        },
-        {
-            project_title:"saral print",
-            descreption:"It was made",
-            link:"https://saral.com"
-        },
-    ]
-
-    let skills = [
-        {name:"HTML, CSS, Javascript"},
-        {name:"React"},
-    ]
 
   return (
     <div ref={printRef} className='w-full mx-8 lg:mx-0 h-[700px] flex border border-gray-400'>
