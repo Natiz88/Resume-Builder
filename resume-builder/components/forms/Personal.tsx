@@ -29,7 +29,6 @@ const Personal = () => {
 
   const submitInfo = (e:FormEvent) => {
     e.preventDefault();
-    console.log("form",info)
     dispatch(infoActions.updatePersonalInfo(info))
   }
 

@@ -45,8 +45,8 @@ const initialState = {
     ],
 
     skills :[
-        {name:"HTML, CSS, Javascript"},
-        {name:"React"},
+        {id:1,skill:"HTML, CSS, Javascript"},
+        {id:2,skill:"React"},
     ]
 }
 
@@ -55,8 +55,10 @@ const InfoSlice = createSlice({
     initialState,
     reducers:{
         updatePersonalInfo(state,action){
-            console.log("red",action.payload)
             state.personalInfo = action.payload
+        },
+        updateSkills(state,action){
+            state.skills = action.payload
         }
     }
 

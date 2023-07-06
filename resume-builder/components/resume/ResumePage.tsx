@@ -23,6 +23,8 @@ const ResumePage = () => {
 
     const printRef = useRef<HTMLInputElement>(null);
 
+    console.log("s",skills)
+
     const printBill = () => {
         if(printRef.current){
         let element = printRef.current.innerHTML;
@@ -80,9 +82,9 @@ const ResumePage = () => {
                 <h2>Skills</h2>
                 <hr />
                 <div className='pl-2'>
-                    {skills.map((skill,idx) => 
-                    <div key={idx+1} className='py-1'>
-                        <p>{skill.name}</p>
+                    {skills.map((skill) => 
+                    <div key={skill.id} className='py-1'>
+                        <p>{skill.skill}</p>
                     </div>
                     )}
                 </div>

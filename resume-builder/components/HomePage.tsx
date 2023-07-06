@@ -12,9 +12,9 @@ const HomePage = () => {
     <div className='lg:flex justify-around'>
       <div className='lg:w-2/5'>
       <Steps />
-      <Personal />
+      {/* <Personal /> */}
       
-      {/* <Skills /> */}
+      <Skills />
       </div>
       <div className='lg:w-3/6 lg:mx-4'>      
       <ResumePage/>
