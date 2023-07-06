@@ -6,8 +6,6 @@ import {useSelector} from 'react-redux';
 import type { RootState } from '../redux/store';
 
 export default function Home() {
-  // const info = useSelector((state:RootState) => state.counter.value);
-  console.log("infoo")
   return (
     <main className="w-full h-full">
       <HomePage />   

@@ -1,13 +1,21 @@
 import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./RootReducer";
-import InfoSlice from "./reducers/InfoReducer";
-import CounterSlice from "./reducers/CounterSlice";
 import InfoReducer from "./reducers/InfoReducer";
+import EducationReducer from "./reducers/EducationReducer";
+import SkillReducer from "./reducers/SkillReducer";
+import ExperienceReducer from "./reducers/ExperienceReducer";
+import SiteReducer from "./reducers/SiteReducer";
+import ProjectReducer from "./reducers/ProjectReducer";
+import StepReducer from "./reducers/StepReducer";
 
 export const store = configureStore({ reducer: 
     {
-    counter:CounterSlice,
-    info:InfoReducer
+    info:InfoReducer,
+    education:EducationReducer,
+    skill:SkillReducer,
+    experience:ExperienceReducer,
+    site:SiteReducer,
+    project:ProjectReducer,
+    step:StepReducer,
 } 
 });
 
