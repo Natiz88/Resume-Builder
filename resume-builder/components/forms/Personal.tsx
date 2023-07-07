@@ -1,19 +1,10 @@
-import {FormEvent, useState} from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
 import {
-  Button,
-  Card,
   Grid,
-  Input,
-  InputAdornment,
-  IconButton,
   TextField,
 } from "@mui/material";
 import { useSelector,useDispatch } from "react-redux";
 import {updateInfo} from '../../redux/reducers/InfoReducer';
 
-import NextButton from "../NextButton";
 import { RootState } from "@/redux/store";
 
 const Personal = () => {
@@ -41,7 +32,6 @@ const Personal = () => {
       </Grid>
 </Grid>
     </form>
-    <NextButton/>
   </div>;
 };
 

@@ -3,13 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     projects :[
         {
+            id:1,
             project_title:"Answerout",
-            descreption:"It was made",
+            description:"It was made",
             link:"https://answerout.com"
         },
         {
+            id:2,
             project_title:"saral print",
-            descreption:"It was made",
+            description:"It was made",
             link:"https://saral.com"
         },
     ],
@@ -18,13 +20,25 @@ const initialState = {
 const ProjectSlice = createSlice({
     name:"project",
     initialState,
-    reducers:{
-        updateProject(state,action){
-            state.projects = action.payload
+    reducers:
+    {
+        addProject(state,action){
+            state.projects = [...state.projects,action.payload.value]
         },
+        updateProject(state,action){
+            state.projects = state.projects.map(obj => {
+                if (obj.id === action.payload.id) {
+                  return obj = action.payload.value
+                }
+                  return obj;
+              });
+        },
+        deleteProject(state,action){
+            state.projects = state.projects.filter(exp => action.payload.id !== exp.id)
+       },
     }
 
 })
 
-    export const {updateProject} = ProjectSlice.actions;
+    export const {addProject,updateProject,deleteProject} = ProjectSlice.actions;
 export default ProjectSlice.reducer;

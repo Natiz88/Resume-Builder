@@ -7,7 +7,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MailIcon from '@mui/icons-material/Mail';
 import PermDeviceInformationIcon from '@mui/icons-material/PermDeviceInformation';
-import { EmailOutlined } from '@mui/icons-material';
 import HomeIcon from '@mui/icons-material/Home';
 
 import {useSelector,useDispatch} from 'react-redux';
@@ -95,10 +94,10 @@ const ResumePage = () => {
                 <h2>Projects</h2>
                 <hr />
                 <div className='pl-2'> 
-                    {projects.map((project,idx) => 
-                    <div key={idx+1} className='py-2'>
+                    {projects.map((project) => 
+                    <div key={project.id} className='py-2'>
                         <h4>{project.project_title}</h4>
-                    <p>{project.descreption}</p>
+                    <p>{project.description}</p>
                     <p>{project.link}</p>
                     </div>
                     )}
@@ -108,11 +107,12 @@ const ResumePage = () => {
                 <h2>Experience</h2>
                 <hr />
                 <div className='pl-2'>
-                    {experience.map((exp,idx) => 
-                    <div key={idx+1} className='py-2'>
-                        <h4>{exp.employer},{exp.location}</h4>
-                    <p>{exp.descreption}</p>
-                    <p>{exp.start} - {exp.end}</p>
+                    {experience.map((exp) => 
+                    <div key={exp.id} className='py-2'>
+                    <h2>{exp?.title}</h2>
+                    {exp.employer && <h4>{exp?.employer},{exp?.location}</h4>}
+                    <p>{exp?.description}</p>
+                    {exp?.start && <p>{exp?.start} - {exp.current ? "Present" : exp.end}</p>}
                     </div>
                     )}
                 </div>

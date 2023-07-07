@@ -1,6 +1,5 @@
 'use client'
 import {FormEvent,useState} from 'react';
-import {v4 as uuidv4} from 'uuid';
 import { useSelector,useDispatch } from 'react-redux';
 import { RootState } from '@/redux/store';
 import { addSkill,updateSkill,deleteSkill } from '@/redux/reducers/SkillReducer';
@@ -9,9 +8,7 @@ import {
     Button,
     TextField,
   } from "@mui/material";
-  import AddIcon from '@mui/icons-material/Add';
   import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import { idText } from 'typescript';
 
 const Skills = () => {
   const dispatch = useDispatch();
@@ -24,19 +21,14 @@ const Skills = () => {
         dispatch(addSkill({}))
     }
 
-    const deleteSingleSkill = (id:String) => {
+    const deleteSingleSkill = (id:number) => {
       dispatch(deleteSkill({id}))
     }
 
-    const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,id:String) => {
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,id:number) => {
       let value = e.target.value;
       dispatch(updateSkill({id,value}))
     }
-
-    // const submitSkills = (e:FormEvent) => {
-    //   e.preventDefault();
-    //   dispatch(updateSkill(skills))
-    // }
 
   return (
     <div className="w-full px-8 mt-8">
@@ -52,8 +44,6 @@ const Skills = () => {
         )
 }
 </Grid>
-<button type='submit'>Submit</button>
-
         </form>
     </div>
   )

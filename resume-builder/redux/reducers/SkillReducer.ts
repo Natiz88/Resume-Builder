@@ -15,9 +15,6 @@ const SkillSlice = createSlice({
         addSkill(state,action){
             state.skills = [...state.skills,{id:uuidv4(),skill:""}]
         },
-        deleteSkill(state,action){
-             state.skills = state.skills.filter(skill => action.payload.id !== skill.id)
-        },
         updateSkill(state,action){
             state.skills = state.skills.map(obj => {
                 if (obj.id === action.payload.id) {
@@ -26,6 +23,9 @@ const SkillSlice = createSlice({
                   return obj;
               });
         },
+        deleteSkill(state,action){
+            state.skills = state.skills.filter(skill => action.payload.id !== skill.id)
+       },
 
     }
 
