@@ -13,7 +13,7 @@ const Personal = () => {
 
   return <div className="w-full px-8 mt-8">
     <h3 className="text-center py-4">Enter your personal details</h3>
-    <form className=" p-2">
+    <form className="p-2">
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <TextField label="Full Name" value={info.name} fullWidth variant="outlined" onChange={(e)=>dispatch(updateInfo({...info,name:e.target.value}))} />      </Grid>

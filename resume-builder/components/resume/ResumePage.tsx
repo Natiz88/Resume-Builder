@@ -32,18 +32,19 @@ const ResumePage = () => {
       };
 
   return (
-    <div ref={printRef} className='w-full mx-8 lg:mx-0 h-[700px] flex border border-gray-400'>
-        <div className='w-[35%] p-4 h-full flex flex-col items-center  bg-blue-900 text-white'>
-            <Image
-      src={ProfilePic}
-      width={130}
-      height={130}
-      alt="Pic"
+    <>
+    <div ref={printRef} className='w-full mx-8 lg:mx-0 h-[800px] flex shadow-lg'>
+        <div className='w-[35%] p-4 h-full flex flex-col items-center bg-primary text-white'>
+        <Image
+            src={ProfilePic}
+            width={130}
+            height={130}
+            alt="Pic"
             />
-            <div className="w-full py-4">
+            <div className="w-full py-8 text-white">
                 <h2>Contact</h2>
                 <hr />
-                <div className='flex flex-col space-y-2 py-1 pl-2'>
+                <div className='flex flex-col space-y-2 py-1 pl-2 text-white'>
                     <p><HomeIcon/>{personalInfo.address}</p>
                     <p><PermDeviceInformationIcon/>{personalInfo.phone}</p>
                     <p><MailIcon/>{personalInfo.email}</p>
@@ -116,10 +117,11 @@ const ResumePage = () => {
                     </div>
                     )}
                 </div>
-                <button onClick={printBill}>Print</button>
             </div>
         </div>
     </div>
+                    <button onClick={printBill}>Print</button>
+</>
   )
 }
 
