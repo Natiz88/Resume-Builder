@@ -28,3 +28,17 @@
   margin:0;
   box-sizing: border-box;
 }
+
+@media print {
+  @page { size: auto;  margin: 0mm; }
+  body {
+    visibility: hidden;
+  }
+  #resume{
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: none;
+  }
+}

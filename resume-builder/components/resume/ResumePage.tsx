@@ -22,6 +22,7 @@ const ResumePage = () => {
 
     const printRef = useRef<HTMLInputElement>(null);
     const printBill = () => {
+        return window.print()
         if(printRef.current){
         let element = printRef.current.innerHTML;
         let doc = document.body.innerHTML;
@@ -33,7 +34,7 @@ const ResumePage = () => {
 
   return (
     <>
-    <div ref={printRef} className='w-full mx-8 lg:mx-0 h-[800px] flex shadow-lg'>
+    <div ref={printRef} id="resume" className='w-full mx-8 lg:mx-0 h-[800px] flex shadow-lg'>
         <div className='w-[35%] p-4 h-full flex flex-col items-center bg-primary text-white'>
         <Image
             src={ProfilePic}
@@ -120,7 +121,7 @@ const ResumePage = () => {
             </div>
         </div>
     </div>
-                    <button onClick={printBill}>Print</button>
+                    <button onClick={()=>window.print()}>Print</button>
 </>
   )
 }
